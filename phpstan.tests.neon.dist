@@ -1,0 +1,21 @@
+includes:
+	- vendor/phpstan/phpstan-nette/extension.neon
+	- vendor/phpstan/phpstan-nette/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/damejidlo/phpstan-nette-tester/extension.neon
+
+parameters:
+	level: max
+	paths:
+		- %currentWorkingDirectory%/tests
+
+	fileExtensions:
+		- php
+		- phpt
+
+	autoload_directories:
+		- %currentWorkingDirectory%/tests
+
+	excludes_analyse:
+		- %currentWorkingDirectory%/tests/bootstrap.php
+		- %currentWorkingDirectory%/tests/temp/*

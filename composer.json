@@ -1,0 +1,29 @@
+{
+	"name": "damejidlo/envy",
+	"type": "library",
+	"license": "BSD-3-Clause",
+	"description": "Helpers for extracting, validating and type-casting data from environment variables",
+	"require": {
+		"php": ">=7.3"
+	},
+	"require-dev": {
+		"damejidlo/coding-standard": "^1.1",
+		"damejidlo/phpstan-nette-tester": "^0.1.0",
+		"jakub-onderka/php-parallel-lint": "^1.0",
+		"nette/tester": "^2.3",
+		"pepakriz/phpstan-exception-rules": "^0.8.1",
+		"phpstan/phpstan-nette": "^0.11",
+		"phpstan/phpstan-shim": "^0.11.19",
+		"phpstan/phpstan-strict-rules": "^0.11.1"
+	},
+	"autoload": {
+		"psr-4": {
+			"Damejidlo\\Envy\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"DamejidloTests\\Envy\\": "tests/"
+		}
+	}
+}

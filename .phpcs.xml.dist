@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<ruleset>
+	<config name="installed_paths" value="../../damejidlo/coding-standard"/><!-- relative path from PHPCS source location -->
+
+	<arg value="s"/><!-- show sniff names -->
+	<arg name="cache" value=".phpcs-cache"/>
+
+	<arg name="extensions" value="php,phpt"/>
+	<file>src</file>
+	<file>tests</file>
+
+	<rule ref="DameJidloCodingStandard">
+	</rule>
+
+	<rule ref="SlevomatCodingStandard.Functions.TrailingCommaInCall"/><!-- PHP >=7.3 only -->
+
+	<rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+		<properties>
+			<property name="ignoredAnnotationNames" type="array">
+				<element value="@testCase"/>
+				<element value="@dataProvider"/>
+			</property>
+		</properties>
+	</rule>
+
+	<rule ref="SlevomatCodingStandard.Files.TypeNameMatchesFileName">
+		<properties>
+			<property name="rootNamespaces" type="array">
+				<element key="src" value="Damejidlo\Envy"/>
+				<element key="tests" value="DamejidloTests\Envy"/>
+			</property>
+			<property name="extensions" type="array">
+				<element value="php"/>
+				<element value="phpt"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+		<properties>
+			<property name="traversableTypeHints" type="array">
+				<element value="Traversable"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- special settings for tests and bootstrap -->
+	<exclude-pattern>*/tests/temp/*</exclude-pattern>
+	<rule ref="PSR1.Files.SideEffects">
+		<exclude-pattern>*.phpt</exclude-pattern>
+		<exclude-pattern>*/bootstrap.php</exclude-pattern>
+	</rule>
+</ruleset>

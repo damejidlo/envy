@@ -1,0 +1,16 @@
+includes:
+	- vendor/pepakriz/phpstan-exception-rules/extension.neon
+	- vendor/phpstan/phpstan-nette/extension.neon
+	- vendor/phpstan/phpstan-nette/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+
+parameters:
+	level: max
+	paths:
+		- %currentWorkingDirectory%/src
+
+	exceptionRules:
+		uncheckedExceptions:
+			- LogicException
+			- Nette\InvalidStateException
+			- Nette\Utils\AssertionException
