@@ -1,0 +1,14 @@
+extensions:
+	envy: Damejidlo\Envy\DI\EnvyExtension
+
+parameters:
+	env:
+		foo: @envy::getString(FOO)
+		bar: @envy::getString(BAR, default)
+		baz: @envy::getStringOrNull(BAZ)
+
+services:
+	env:
+		type: Nette\Utils\ArrayHash
+		factory: Nette\Utils\ArrayHash::from
+		arguments: [%env%]

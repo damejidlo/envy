@@ -4,9 +4,12 @@
 	"license": "BSD-3-Clause",
 	"description": "Helpers for extracting, validating and type-casting data from environment variables",
 	"require": {
-		"php": ">=7.3"
+		"php": ">=7.3",
+		"nette/utils": "^2.5@dev || ^3.0@dev"
 	},
 	"require-dev": {
+		"nette/di": "^2.4.10@dev || ^3.0.1@dev",
+		"nette/bootstrap": "^2.4.6 || ^3.0",
 		"damejidlo/coding-standard": "^1.1",
 		"damejidlo/phpstan-nette-tester": "^0.1.0",
 		"jakub-onderka/php-parallel-lint": "^1.0",
@@ -15,6 +18,9 @@
 		"phpstan/phpstan-nette": "^0.11",
 		"phpstan/phpstan-shim": "^0.11.19",
 		"phpstan/phpstan-strict-rules": "^0.11.1"
+	},
+	"suggest": {
+		"nette/di": "for integration with Nette DI container"
 	},
 	"autoload": {
 		"psr-4": {
