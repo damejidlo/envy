@@ -33,6 +33,15 @@ final class Envy
 
 
 
+	public static function create() : Envy
+	{
+		$reader = new Reader();
+		$loaderFactory = new LoaderFactory($reader);
+		return new Envy($reader, $loaderFactory);
+	}
+
+
+
 	public function exists(string $name) : bool
 	{
 		return $this->reader->exists($name);
