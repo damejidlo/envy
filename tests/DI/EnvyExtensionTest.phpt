@@ -21,6 +21,14 @@ use Tester\Assert;
 class EnvyExtensionTest extends TestCase
 {
 
+	protected function setUp() : void
+	{
+		parent::setUp();
+		putenv('FOO=foo');
+	}
+
+
+
 	public function testServices() : void
 	{
 		$container = $this->createContainer();
@@ -35,7 +43,6 @@ class EnvyExtensionTest extends TestCase
 
 	public function testParameters() : void
 	{
-		putenv('FOO=foo');
 		$container = $this->createContainer();
 		Assert::same(
 			[
